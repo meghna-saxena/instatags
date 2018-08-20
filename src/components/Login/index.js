@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "../../actions";
 
 class index extends Component {
   loginHandler = () => {
@@ -10,7 +12,22 @@ class index extends Component {
     window.location.replace(url);
   };
 
+  checkAndSetAccessToken() {
+    //extracting the fragment identifier (value after hash #) from the redirect URI
+    const urlFragment = document.location.hash;
+   
+    const accessToken = urlFragment.substr(urlFragment.indexOf("=") + 1);
+
+    //passing accessToken to the action creator to store it as global state in the redux store
+    if (accessToken) {
+      this.props.setAccessToken(accessToken);
+    }
+  }
+
   render() {
+    this.checkAndSetAccessToken();
+    console.log("this.props.auth", this.props.auth);
+
     return (
       <div>
         <div className="row">
@@ -38,13 +55,11 @@ class index extends Component {
   }
 }
 
-// function mapStateToProps({ auth }) {
-//   return { auth };
-// }
+function mapStateToProps({ auth }) {
+  return { auth }; //returning state.auth which has the accessToken
+}
 
-// export default connect(
-//   mapStateToProps,
-//   actions
-// )(index);
-
-export default index;
+export default connect(
+  mapStateToProps,
+  actions
+)(index);
