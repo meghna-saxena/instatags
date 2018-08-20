@@ -1,13 +1,60 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import axios from "axios";
+import { Link, Redirect } from "react-router-dom";
 
 class index extends Component {
-    render() {
-        return (
-            <div>
-                Dashboard
-            </div>
-        );
+  state = {
+    username: "",
+    picture: null
+  };
+
+  componentDidMount() {
+    const accessToken = this.props.auth;
+
+    //fetch information about the owner of the accessToken whenever this component mounts
+    axios
+      .get(
+        `https://api.instagram.com/v1/users/self/?access_token=${accessToken}`
+      )
+      .then(response => {
+        this.setState({
+          username: response.data.data.username,
+          picture: response.data.data.profile_picture
+        });
+      });
+  }
+
+  render() {
+    //check if user is not authorized, redirect to home route
+    if (!this.props.auth) {
+      return <Redirect to="/" />;
     }
+
+    return (
+      <nav>
+        <div className="nav-wrapper">
+          <Link to="/" className="left brand-logo">
+            InstaReact
+          </Link>
+          <div className="col s2">
+            <img
+              src={this.state.picture}
+              alt="profile pic"
+              className="circle responsive-img"
+            />
+          </div>
+          <div className="right hide-on-med-and-down">
+            {this.state.username}
+          </div>
+        </div>
+      </nav>
+    );
+  }
 }
 
-export default index;
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps)(index);

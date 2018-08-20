@@ -12,7 +12,7 @@ body {
 }
 
 .row {
-  max-width: 1140px; 
+  max-width: 1140px;
   margin: 0 auto;
   display: inline-block;
   position: relative;
@@ -23,10 +23,7 @@ body {
   top: 300px;
   left: 30%;
   width: 300px;
-  transform: translate(
-    -50%,
-    -50%
-  );
+  transform: translate(-50%, -50%);
   text-transform: capitalize;
 }
 
@@ -47,4 +44,23 @@ body {
   margin: 0 auto;
   font-family: "Amatic SC", cursive;
   color: rgb(228, 133, 8);
+}
+
+.nav-wrapper {
+  background-color: #fff;
+  color: #000000;
+}
+
+nav .brand-logo {
+  color: black;
+  font-family: "Amatic SC", cursive;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+img.responsive-img {
+  float: right;
+  width: 50px;
+  margin-top: 5px;
+  margin-left: 20px;
 }
