@@ -20,6 +20,7 @@ body {
 
 .card {
   position: absolute;
+  margin-top: 30px;
   top: 300px;
   left: 30%;
   width: 300px;
@@ -63,4 +64,55 @@ img.responsive-img {
   width: 50px;
   margin-top: 5px;
   margin-left: 20px;
+}
+
+.form {
+  position: relative;
+}
+
+.input-field {
+  width: 50%;
+  margin-top: 40px;
+  display: inline;
+}
+
+.input-field input[type="search"] {
+  /* display: block; */
+  line-height: inherit;
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 50%;
+}
+
+.input-field input[type="search"] {
+  display: inline;
+}
+
+input[type="text"]:not(.browser-default) {
+  margin-top: 10px;
+  border-bottom: 1px solid #26a69a;
+  box-shadow: 0 1px 0 0 #4b6360;
+  width: 50%;
+}
+
+button {
+  position: absolute;
+  margin-right: 30px;
+  margin-top: 20px;
+  text-transform: capitalize;
+}
+
+.btn-flat {
+  border-radius: 100px;
+}
+
+.red.accent-2 {
+  text-transform: capitalize;
+}
+
+.media-content {
+  font-size: 24px;
+  text-transform: capitalize;
+  width: 100%;
+  margin: 0 auto;
 }

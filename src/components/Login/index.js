@@ -44,7 +44,7 @@ class index extends Component {
               <div className="card-image">
                 <img
                   className="insta-logo"
-                  src="https://i.vimeocdn.com/portrait/13201883_300x300"
+                  src="https://s3.r29static.com//bin/entry/fb1/x/1590724/image.png"
                   alt="insta-logo"
                 />
               </div>

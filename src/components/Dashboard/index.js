@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
+import Searchbar from "../Searchbar";
 
 class index extends Component {
   state = {
@@ -32,23 +33,26 @@ class index extends Component {
     }
 
     return (
-      <nav>
-        <div className="nav-wrapper">
-          <Link to="/" className="left brand-logo">
-            InstaReact
-          </Link>
-          <div className="col s2">
-            <img
-              src={this.state.picture}
-              alt="profile pic"
-              className="circle responsive-img"
-            />
+      <div>
+        <nav>
+          <div className="nav-wrapper">
+            <Link to="/" className="left brand-logo">
+              InstaReact
+            </Link>
+            <div className="col s2">
+              <img
+                src={this.state.picture}
+                alt="profile pic"
+                className="circle responsive-img"
+              />
+            </div>
+            <div className="right hide-on-med-and-down">
+              {this.state.username}
+            </div>
           </div>
-          <div className="right hide-on-med-and-down">
-            {this.state.username}
-          </div>
-        </div>
-      </nav>
+        </nav>
+        <Searchbar />
+      </div>
     );
   }
 }
