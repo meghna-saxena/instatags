@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
 import { Redirect } from "react-router-dom";
+import keys from '../../config/keys';
 
 class index extends Component {
   loginHandler = () => {
-    const CLIENT_ID = "c04ba5775fa147ac9ef3187695bffbff";
-    const REDIRECT_URI = "http://localhost:3000";
+    const CLIENT_ID = keys.instagramClientId;
+    const REDIRECT_URI = keys.redirectUrl;
 
     const url = `https://api.instagram.com/oauth/authorize/?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token`;
 
