@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
+import { Redirect } from "react-router-dom";
 
 class index extends Component {
   loginHandler = () => {
@@ -15,7 +16,7 @@ class index extends Component {
   checkAndSetAccessToken() {
     //extracting the fragment identifier (value after hash #) from the redirect URI
     const urlFragment = document.location.hash;
-   
+
     const accessToken = urlFragment.substr(urlFragment.indexOf("=") + 1);
 
     //passing accessToken to the action creator to store it as global state in the redux store
@@ -27,6 +28,11 @@ class index extends Component {
   render() {
     this.checkAndSetAccessToken();
     console.log("this.props.auth", this.props.auth);
+
+    if (this.props.auth) {
+      //redirect the user to "/dashboard" when state.auth (i.e accessToken) is present
+      return <Redirect to="/dashboard" />;
+    }
 
     return (
       <div>
