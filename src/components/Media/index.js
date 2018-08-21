@@ -13,7 +13,7 @@ class index extends Component {
 
       return hasTagName;
     });
-    console.log("filteredUserTags", filteredUserTags);
+    // console.log("filteredUserTags", filteredUserTags);
 
     // map through the filteredUserTags and return the image url of that post
     const mediaPost = filteredUserTags.map(el => {

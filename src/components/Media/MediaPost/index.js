@@ -4,7 +4,7 @@ import React from "react";
 const index = ({ url }) => {
   return (
     <div className="row">
-      <div class="media-post">
+      <div className="media-post">
         <div className="postimg-container">
           <img className="postimg" src={url} alt="post" />
         </div>

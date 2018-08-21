@@ -9,7 +9,7 @@ class index extends Component {
     const CLIENT_ID = keys.instagramClientId;
     const REDIRECT_URI = keys.redirectUrl;
 
-    const url = `https://api.instagram.com/oauth/authorize/?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token`;
+    const url = `https://api.instagram.com/oauth/authorize/?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token&scope=public_content`;
 
     //direct the user to our authorization URL
     window.location.replace(url);
@@ -38,9 +38,9 @@ class index extends Component {
 
     return (
       <div className="login-page">
-        <div class="login-textbox">
-          <h1 class="login-heading">Instatags</h1>
-          <p class="login-body">See instagram photos on hashtag search</p>
+        <div className="login-textbox">
+          <h1 className="login-heading">Instatags</h1>
+          <p className="login-body">See instagram photos on hashtag search</p>
           <a className="btn btn-full" onClick={this.loginHandler}>
             Login with instagram
           </a>
