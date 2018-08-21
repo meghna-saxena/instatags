@@ -18,34 +18,79 @@ body {
   position: relative;
 }
 
-.card {
-  position: absolute;
-  margin-top: 30px;
-  top: 300px;
-  left: 30%;
-  width: 300px;
-  transform: translate(-50%, -50%);
-  text-transform: capitalize;
+/* ================== LOGIN COMPONENT ======================= */ 
+
+.login-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("https://s3.amazonaws.com/mlabs-s3-blog/wp-content/uploads/2018/01/17122647/Instagram-Stories.jpg");
+  background-size: cover; /* to see whole img */
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh; /* to cover the entire viewport, 100% of vh */
+  box-shadow: 5px 10px 18px #888888;
 }
 
-.insta-logo {
-  filter: grayscale(40%);
-  filter: blur(1px);
+.login-textbox {
+  position: absolute; /* that's the only way we can vertically & horizontally center it */
+  /* width: 1140px; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
-.card-image {
-  border: 2px solid rgb(226, 219, 219);
+.login-body {
+  /* width: 53%; */
+  text-align: center;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  color: #fafafa;
+  font-size: 16px;
+  border-bottom: 1px solid #26a69a;
 }
 
-.card .card-title {
-  font-size: 40px;
+.login-heading {
+  margin-bottom: 40px;
+  /* font-size: 80px; */
+  font-size: 110px;
   font-weight: 700;
-  display: inline-block;
-  margin: 0 auto;
   font-family: "Amatic SC", cursive;
-  color: rgb(228, 133, 8);
+  color: #fafafa;
 }
+
+.btn {
+  border-radius: 200px;
+  background-color: rgb(13, 170, 149);
+}
+
+.btn:link,
+.btn:visited {
+  /* display: inline-block; */
+  /* padding: 10px 30px; */
+  font-weight: 300;
+  text-decoration: none;
+  /* border-radius: 200px; */
+  color: #fff;
+  transition: background-color 0.2s;
+  font-size: 70%;
+ 
+}
+
+.btn-full:link,
+.btn-full:visited {
+  margin-right: 15px;
+}
+
+.btn-full:hover,
+.btn-full:active {
+  background-color: #c7422b;
+  color: #d6e6e4;
+}
+
+
+/* ================== DASHBOARDCOMPONENT ======================= */ 
+
 
 .nav-wrapper {
   background-color: #fff;
@@ -117,3 +162,27 @@ button {
   margin: 0 auto;
 }
 
+.media-post {
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.postimg-container {
+  width: 100%;  
+  margin: 0;
+  overflow: hidden;
+  background-color: #000; 
+}
+
+.postimg {
+  opacity: 0.7; /* make the img opaque white - 70% */ 
+  width: 100%;
+  height: auto;
+  transform: scale(1.15); /* instead of img being 100% big, it will be 115% big */
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.postimg:hover {
+  opacity: 1; /* 100% */
+  transform: scale(1.03);
+}

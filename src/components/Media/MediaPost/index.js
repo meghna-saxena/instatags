@@ -4,8 +4,10 @@ import React from "react";
 const index = ({ url }) => {
   return (
     <div className="row">
-      <div>
-        <img src={url} alt="post" />
+      <div class="media-post">
+        <div className="postimg-container">
+          <img className="postimg" src={url} alt="post" />
+        </div>
       </div>
     </div>
   );

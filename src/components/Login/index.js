@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
 import { Redirect } from "react-router-dom";
-import keys from '../../config/keys';
+import keys from "../../config/keys";
 
 class index extends Component {
   loginHandler = () => {
@@ -11,6 +11,7 @@ class index extends Component {
 
     const url = `https://api.instagram.com/oauth/authorize/?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token`;
 
+    //direct the user to our authorization URL
     window.location.replace(url);
   };
 
@@ -36,26 +37,13 @@ class index extends Component {
     }
 
     return (
-      <div>
-        <div className="row">
-          <div className="col s12 m7">
-            <div className="card">
-              <div className="card-title title">Instareact</div>
-              <div className="card-image">
-                <img
-                  className="insta-logo"
-                  src="https://s3.r29static.com//bin/entry/fb1/x/1590724/image.png"
-                  alt="insta-logo"
-                />
-              </div>
-              <div className="card-content">
-                <p>See instagram photos on tag search</p>
-              </div>
-              <div className="card-action">
-                <a onClick={this.loginHandler}>Login with instagram</a>
-              </div>
-            </div>
-          </div>
+      <div className="login-page">
+        <div class="login-textbox">
+          <h1 class="login-heading">Instatags</h1>
+          <p class="login-body">See instagram photos on hashtag search</p>
+          <a className="btn btn-full" onClick={this.loginHandler}>
+            Login with instagram
+          </a>
         </div>
       </div>
     );

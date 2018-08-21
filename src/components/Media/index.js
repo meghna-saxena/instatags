@@ -24,7 +24,7 @@ class index extends Component {
     return (
       <div className="media-content">
         #{searchedTagName}: {tagCount} posts
-        <div>{mediaPost}</div>
+        <div className="media-post">{mediaPost}</div>
       </div>
     );
   }

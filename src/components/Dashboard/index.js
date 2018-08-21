@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Searchbar from "../Searchbar";
 
 class index extends Component {
@@ -36,15 +36,17 @@ class index extends Component {
       <div>
         <nav>
           <div className="nav-wrapper">
-            <Link to="/" className="left brand-logo">
+            <a href="/" className="left brand-logo">
               InstaReact
-            </Link>
+            </a>
             <div className="col s2">
-              <img
-                src={this.state.picture}
-                alt="profile pic"
-                className="circle responsive-img"
-              />
+              <a href="/">
+                <img
+                  src={this.state.picture}
+                  alt="profile pic"
+                  className="circle responsive-img"
+                />
+              </a>
             </div>
             <div className="right hide-on-med-and-down">
               {this.state.username}
