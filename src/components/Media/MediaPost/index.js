@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const index = () => {
-    return (
-        <div>
-            MediaPost
-        </div>
-    );
+//receiving props.url
+const index = ({ url }) => {
+  return (
+    <div className="row">
+      <div>
+        <img src={url} alt="post" />
+      </div>
+    </div>
+  );
 };
 
 export default index;

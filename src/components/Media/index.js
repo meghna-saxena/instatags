@@ -6,18 +6,16 @@ class index extends Component {
     const searchedTagName = this.props.media.hashtag.data.name; //hastag name
     const tagCount = this.props.media.hashtag.data.media_count; //hashtag count
     const userData = this.props.media.data; // recent user's media data
-    console.log("userData", userData);
 
     //filter the user data which contains the searched tagname in its 'tags' property
-
     const filteredUserTags = userData.filter(el => {
       const hasTagName = el.tags.includes(searchedTagName);
 
       return hasTagName;
     });
-
     console.log("filteredUserTags", filteredUserTags);
 
+    // map through the filteredUserTags and return the image url of that post
     const mediaPost = filteredUserTags.map(el => {
       const postUrl = el.images.low_resolution.url;
       return <MediaPost key={el.id} url={postUrl} />;
