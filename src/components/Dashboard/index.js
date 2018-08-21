@@ -37,7 +37,7 @@ class index extends Component {
         <nav>
           <div className="nav-wrapper">
             <a href="/" className="left brand-logo">
-              InstaReact
+              Instatags
             </a>
             <div className="col s2">
               <a href="/">
