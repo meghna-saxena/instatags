@@ -21,7 +21,6 @@ export const fetchTagCount = (tagName, accessToken) => async dispatch => {
 
   // creating an object immutably by spread operator to merge the above two fetched responses
   const res = { ...userRecentMedia.data, hashtag: tagResponse.data };
-
-  console.log("All the data required to show results", res);
+  
   dispatch({ type: FETCH_TAGS_COUNT, payload: res });
 };
